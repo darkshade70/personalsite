@@ -58,3 +58,13 @@ body {
   opacity: 1;
   padding-top: 10px;
 }
+
+@media (max-width: 768px) {
+  .item-container {
+    width: 90%;
+  }
+
+  .project-container {
+    padding: 2rem 1rem;
+  }
+}
