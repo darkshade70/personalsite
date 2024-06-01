@@ -2,32 +2,59 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  margin: 0;
+  padding: 0;
+  background: rgb(233, 233, 233);
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+
+.item {
+  list-style-type: none;
+}
+
+.item-container {
+  position: relative;
+  padding: 10px 0px;
+  border-bottom: 1px solid black;
+  width: 35rem;
+}
+.item-button {
+  cursor: pointer;
+  outline: none;
+  display: inline-block;
+  text-align: left;
+  border: none;
+  position: relative;
+}
+
+.item-button:hover{
+  color: rgb(104, 104, 104);
+}
+
+.item-button:hover + .item-container {
+  border-color: white;
+}
+
+.item-content {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  padding-top: 0;
+  transition: max-height 0.4s linear, opacity 0.3s linear, padding-top 0.5s linear;
+  position: relative;
+}
+
+.item-content img {
+  max-width: 100%;
+}
+
+.item-content p {
+  margin: 10px 0;
+}
+
+.item-content-enter {
+  max-height: 500px;
+  opacity: 1;
+  padding-top: 10px;
 }
